@@ -1,0 +1,18 @@
+<h1 class="title">Labrynthia</h1>
+<% if @logged_in %>
+  <div class="wrap-around">
+    <div class="twitter"><a href="/twitter/login">twitter</div>
+    <div class="logout"><a href="/logout">Log Out</a></div>
+    <div><button formaction=<%=session[:user_id]%> class="save-game"><span>Save Maze</span></button></div>
+    <div><button formaction=<%=session[:user_id]%> class="my-mazes"><span>My Mazes</span></button></div>
+    <div><button class="new-maze" form action=<%=session[:user_id]%>><span>New Maze</span></button></div>
+  </div>
+
+  <div class="all-mazes">
+  	<div class="maze-container" id="0">
+    </div>
+  </div>
+
+<% else %>
+	<%= erb :_log_in %>
+<% end %>

@@ -1,0 +1,319 @@
+body {
+  height: 100%;
+  /*overflow: hidden;*/
+}
+
+#bubbles {
+  height: 100%;
+  padding: 50px 0;
+  z-index: -1;
+}
+
+.bubble {
+    width: 60px;
+    height: 60px;
+    background: #ffb200;
+    border-radius: 200px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    position: absolute;
+}
+
+.x1 {
+    left: 150px;
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+    opacity: 0.2;
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+
+.x2 {
+    left: 275px;
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    transform: scale(0.6);
+    opacity: 0.5;
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+    -o-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3 {
+    left: 400px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    -o-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4 {
+    left: 600px;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+    opacity: 0.35;
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    -o-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x5 {
+    left: 300px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.3;
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -moz-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+    -o-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes moveclouds {
+    0% {
+        top: 500px;
+    }
+    100% {
+        top: -500px;
+    }
+}
+
+@-webkit-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
+@-moz-keyframes moveclouds {
+    0% {
+        top: 500px;
+    }
+
+    100% {
+        top: -500px;
+    }
+}
+
+@-moz-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+@-o-keyframes moveclouds {
+    0% {
+        top: 500px;
+    }
+    100% {
+        top: -500px;
+    }
+}
+
+@-o-keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
+
+.maze-container {
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  margin: 0 auto;
+  font-size: 0;
+  margin-bottom: 20px;
+}
+
+.cell {
+  font-size: 1rem;
+  vertical-align: top;
+  display: inline-block;
+  width: 10%;
+  height: 10%;
+  box-sizing: border-box;
+  border: 1px solid #000;
+}
+
+.start-point {
+  background-color: rgba(0,195,255,.3);
+}
+
+.end-point {
+  background-color: rgba(235,58,30,.5);
+}
+
+.welcome-box {
+  margin-top: 3%;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  font-size: 7vw;
+  margin-bottom: 20px;
+}
+
+.player {
+  height: 2vw;
+  width: 2vw;
+  margin: auto;
+  margin-top: 30%;
+  display: block;
+  border-radius:50%;
+  background-color: rgb(71, 204, 244);
+  line-height: 1vw;
+
+  text-align:center;
+}
+
+.wrap-around {
+  position: fixed;
+  z-index: 100;
+  float: left;
+}
+
+.wrap-around div {
+  margin-left: 10px;
+  margin-top: 50px;
+}
+
+.wrap-around div button {
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -ms-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+
+  background-color: white;
+  border: none;
+  font-size: 2vw;
+  min-width: 125px;
+  text-align: center;
+}
+
+.wrap-around div button span {
+  display:block;
+  text-decoration:none;
+  padding:5px 10px;
+  font-size: 2vw;
+  color:#000;
+  -webkit-transform: skew(-20deg) !important;
+  -moz-transform: skew(-20deg) !important;
+  -ms-transform: skew(-20deg) !important;
+  -o-transform: skew(-20deg) !important;
+  transform: skew(-20deg) !important;
+}
+
+.wrap-around div button:hover {
+  background: rgba(97, 196, 25, .8);
+}
+
+.wrap-around div button:hover span {
+  color: white;
+}
+
+.logout {
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -ms-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+
+  background-color: white;
+  border: none;
+  font-size: 2vw;
+  min-width: 125px;
+  text-align: center;
+}
+
+.logout a {
+  display:block;
+  text-decoration:none;
+  padding:5px 10px;
+  font-size: 2vw;
+  color:#000;
+  -webkit-transform: skew(-20deg) !important;
+  -moz-transform: skew(-20deg) !important;
+  -ms-transform: skew(-20deg) !important;
+  -o-transform: skew(-20deg) !important;
+  transform: skew(-20deg) !important;
+}
+
+.logout:hover {
+  background: rgba(237,30,68,.6);
+}
+
+.logout a:hover {
+  color: white;
+}
+
+.twitter {
+  -webkit-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  -o-transform: skew(20deg);
+  transform: skew(20deg);
+
+  -webkit-transition: background 0.2s;
+  -moz-transition: background 0.2s;
+  -ms-transition: background 0.2s;
+  -o-transition: background 0.2s;
+  transition: background 0.2s;
+
+  background-color: white;
+  border: none;
+  font-size: 2vw;
+  min-width: 125px;
+  text-align: center;
+}
+
+.twitter a {
+  display:block;
+  text-decoration:none;
+  padding:5px 10px;
+  font-size: 2vw;
+  color:#000;
+  -webkit-transform: skew(-20deg) !important;
+  -moz-transform: skew(-20deg) !important;
+  -ms-transform: skew(-20deg) !important;
+  -o-transform: skew(-20deg) !important;
+  transform: skew(-20deg) !important;
+}
+
+
+.twitter:hover {
+  background: #47CCF4;
+}
+
+.twitter a:hover {
+  color: white;
+}
+
+
+
+/*256 times; 16 ** 2; width 46vw; height: 44vw;
+
+cell => width 6%;
+height: 6%*/
