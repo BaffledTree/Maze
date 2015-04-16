@@ -127,8 +127,8 @@ body {
 
 .maze-container {
   position: relative;
-  width: 50vw;
-  height: 50vw;
+  width: 40vw;
+  height: 40vw;
   margin: 0 auto;
   font-size: 0;
   margin-bottom: 20px;
@@ -161,6 +161,7 @@ body {
   text-align: center;
   font-size: 7vw;
   margin-bottom: 20px;
+  margin-top: -5%;
 }
 
 .player {
@@ -180,6 +181,8 @@ body {
   position: fixed;
   z-index: 100;
   float: left;
+  margin-top: -8%;
+  margin-left: 3%;
 }
 
 .wrap-around div {
@@ -194,20 +197,15 @@ body {
   -o-transform: skew(20deg);
   transform: skew(20deg);
 
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  -ms-transition: background 0.2s;
-  -o-transition: background 0.2s;
-  transition: background 0.2s;
-
-  background-color: white;
+  background-color: rgba(97, 196, 25, .8);
   border: none;
+  border-radius: 3px;
   font-size: 2vw;
-  min-width: 125px;
   text-align: center;
+  width: 100%;
 }
 
-.wrap-around div button span {
+.wrap-around div span {
   display:block;
   text-decoration:none;
   padding:5px 10px;
@@ -218,10 +216,6 @@ body {
   -ms-transform: skew(-20deg) !important;
   -o-transform: skew(-20deg) !important;
   transform: skew(-20deg) !important;
-}
-
-.wrap-around div button:hover {
-  background: rgba(97, 196, 25, .8);
 }
 
 .wrap-around div button:hover span {
@@ -235,23 +229,17 @@ body {
   -o-transform: skew(20deg);
   transform: skew(20deg);
 
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  -ms-transition: background 0.2s;
-  -o-transition: background 0.2s;
-  transition: background 0.2s;
-
-  background-color: white;
+  background-color: rgba(237,30,68,.6);
   border: none;
+  border-radius: 3px;
   font-size: 2vw;
-  min-width: 125px;
   text-align: center;
 }
 
 .logout a {
   display:block;
   text-decoration:none;
-  padding:5px 10px;
+  padding:3px 10px;
   font-size: 2vw;
   color:#000;
   -webkit-transform: skew(-20deg) !important;
@@ -259,10 +247,6 @@ body {
   -ms-transform: skew(-20deg) !important;
   -o-transform: skew(-20deg) !important;
   transform: skew(-20deg) !important;
-}
-
-.logout:hover {
-  background: rgba(237,30,68,.6);
 }
 
 .logout a:hover {
@@ -276,16 +260,10 @@ body {
   -o-transform: skew(20deg);
   transform: skew(20deg);
 
-  -webkit-transition: background 0.2s;
-  -moz-transition: background 0.2s;
-  -ms-transition: background 0.2s;
-  -o-transition: background 0.2s;
-  transition: background 0.2s;
-
-  background-color: white;
+  background-color: #47CCF4;
   border: none;
+  border-radius: 3px;
   font-size: 2vw;
-  min-width: 125px;
   text-align: center;
 }
 
@@ -300,11 +278,6 @@ body {
   -ms-transform: skew(-20deg) !important;
   -o-transform: skew(-20deg) !important;
   transform: skew(-20deg) !important;
-}
-
-
-.twitter:hover {
-  background: #47CCF4;
 }
 
 .twitter a:hover {
