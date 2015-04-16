@@ -2,6 +2,7 @@ get '/' do
 	if logged_in?
 		@logged_in = true
 	end
+  @error_login = session[:errors][:login] unless session[:errors].nil?
   erb :index
 end
 
@@ -25,17 +26,20 @@ post '/signup' do
 end
 
 post '/login' do
+  session[:errors] = nil
   user = User.where(username: params[:username]).first
   unless user.nil?
     session[:user_id] = user.id
-  # else
-
+  else
+    session[:errors] = {login: "Username/Password combination is incorrect"}
+    redirect "/"
   end
   redirect "/users/#{user.id}"
 end
 
 get '/logout' do
   session[:user_id] = nil
+  session[:errors] = nil
   redirect '/'
 end
 
