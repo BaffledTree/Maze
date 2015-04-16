@@ -3,6 +3,7 @@ get '/' do
 		@logged_in = true
 	end
   @error_login = session[:errors][:login] unless session[:errors].nil?
+  session[:errors] = nil
   erb :index
 end
 
@@ -38,8 +39,7 @@ post '/login' do
 end
 
 get '/logout' do
-  session[:user_id] = nil
-  session[:errors] = nil
+  session.clear
   redirect '/'
 end
 
