@@ -1,9 +1,13 @@
 get '/' do
+  session[:errors] = {} if session[:errors].nil?
 	if logged_in?
 		@logged_in = true
 	end
   @error_login = session[:errors][:login] unless session[:errors].nil?
-  session[:errors] = nil
+  @error_signup = session[:errors][:signup] unless session[:errors].nil?
+  #resets error messages on refresh
+  session[:errors][:login] = nil
+  session[:errors][:signup] = {}
   erb :index
 end
 
@@ -17,17 +21,19 @@ get '/users/:id' do
 end
 
 post '/signup' do
+  session[:errors][:signup] = {}
   user = User.new(params)
   if user.save
     session[:user_id] = user.id
-  # else
-
+  else
+    session[:errors][:signup] = {email: user.errors[:email], username: user.errors[:username]}
+    redirect '/'
   end
   redirect "/users/#{user.id}"
 end
 
 post '/login' do
-  session[:errors] = nil
+  session[:errors][:login] = nil
   user = User.where(username: params[:username]).first
   unless user.nil?
     session[:user_id] = user.id
@@ -40,6 +46,7 @@ end
 
 get '/logout' do
   session.clear
+  session[:errors] = {}
   redirect '/'
 end
 

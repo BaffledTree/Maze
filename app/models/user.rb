@@ -1,4 +1,4 @@
-  require 'bcrypt'
+require 'bcrypt'
 class User < ActiveRecord::Base
   # Remember to create a migration!
   include BCrypt
