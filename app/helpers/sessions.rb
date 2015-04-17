@@ -27,7 +27,7 @@ helpers do
       host_and_port = request.host
       host_and_port << ":9393" if request.host == "localhost"
       session[:request_token] = oauth_consumer.get_request_token(
-        :oauth_callback => "http://127.0.0.1:9393/twitter/callback"
+        :oauth_callback => "#{host_and_port}/twitter/callback"
         )
     end
     session[:request_token]
