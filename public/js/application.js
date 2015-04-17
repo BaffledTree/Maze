@@ -180,6 +180,11 @@ $(document).ready(function() {
 
     player.moveDirection(direction);
     player.checkWin();
+    var win = localStorage.getItem('win') || '';
+    if (!player.active && win != 'yes') {
+      alert("You have solved this Maze! Click on the 'New Maze' button to play again.")
+      localStorage.setItem('win','yes');
+    }
   });
 
   player = new Player();
@@ -206,12 +211,12 @@ $(document).ready(function() {
       data: {content: saveMazeJson},
     });
 
-    ajaxSaveRequest.done(function() {
-      // alert('Maze has been saved');
-    });
+    alert('Your maze has been saved!');
+
   });
 
   $('.new-maze').on('click', function(event) {
+    localStorage.setItem('win', 'no');
     maze = new Maze();
     view = new mazeView();
     MazeGame = new mazeController(maze, view);
