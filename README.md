@@ -17,8 +17,8 @@
 
 ##How it works
 
-	Users can create an account or login in order to play the maze game. Once a user has logged in, they can solve the maze by moving their arrow keys. 
+  Users can create an account or login in order to play the maze game. Once a user has logged in, they can solve the maze by moving their arrow keys. 
 
-	Users can generate a random maze by clicking on the "New Maze" button and save their favorite mazes by clickin on the "Save Maze" button. 
+  Users can generate a random maze by clicking on the "New Maze" button and save their favorite mazes by clickin on the "Save Maze" button. 
 
-	To view saved mazes, click on "My Mazes" to see a list of your favorite maze!  
+  To view saved mazes, click on "My Mazes" to see a list of your favorite maze!  
