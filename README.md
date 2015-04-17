@@ -1,11 +1,11 @@
 # Labrynthia (Maze Game): Phase 2 Final Project
 
 ##Learning Compentencies
--It has a database
--It uses an API
--It is styled
--It utilizes JavaScript
--It is deployed [Click here](https://warm-tor-7279.herokuapp.com/)
+- It has a database
+- It uses an API
+- It is styled
+- It utilizes JavaScript
+- It is deployed [Click here](https://warm-tor-7279.herokuapp.com/)
 
 ##Summary
 
