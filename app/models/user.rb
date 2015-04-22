@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :mazes
 
   validates :username, :email, uniqueness: true
-  validates :username, :email, presence: true
+  validates :username, presence: true
 
   def password
     @password ||= Password.new(password_hash)

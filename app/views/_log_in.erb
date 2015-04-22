@@ -14,18 +14,6 @@
               <input type="text" name="name" class="form-control" >
               <br>
               <label>
-              Email: 
-              <% if @error_signup && !@error_signup[:email].nil?%>
-                <% @error_signup[:email].each do |message| %>
-                  <span style="color:red">
-                    <%= message %>
-                  </span>
-                <% end %>
-              <% end %>
-              </label>
-              <input type="email" name="email"  class="form-control" required>
-              <br>
-              <label>
               Username:
               <% if @error_signup && !@error_signup[:username].nil?%>
                 <% @error_signup[:username].each do |message| %>
