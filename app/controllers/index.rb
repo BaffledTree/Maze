@@ -26,7 +26,7 @@ post '/signup' do
   if user.save
     session[:user_id] = user.id
   else
-    session[:errors][:signup] = {email: user.errors[:email], username: user.errors[:username]}
+    session[:errors][:signup] = {username: user.errors[:username]}
     redirect '/'
   end
   redirect "/users/#{user.id}"
@@ -35,7 +35,8 @@ end
 post '/login' do
   session[:errors][:login] = nil
   user = User.where(username: params[:username]).first
-  unless user.nil?
+  password = params[:password]
+  unless user.nil? || !(user.authenticate(password))
     session[:user_id] = user.id
   else
     session[:errors] = {login: "Username/Password combination is incorrect"}
@@ -46,6 +47,7 @@ end
 
 get '/logout' do
   session.clear
+  session[:user_id] = nil
   session[:errors] = {}
   redirect '/'
 end

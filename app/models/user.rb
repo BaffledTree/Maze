@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   include BCrypt
   has_many :mazes
 
-  validates :username, :email, uniqueness: true
+  validates :username, uniqueness: true
   validates :username, presence: true
 
   def password
